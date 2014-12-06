@@ -25,15 +25,15 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.UpArrow)){
+		if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)){
 			MoveTo(currentPosition, PlayerDirection.up);
-		} else if(Input.GetKeyDown(KeyCode.DownArrow)){
+		} else if(Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)){
 			MoveTo(currentPosition, PlayerDirection.down);
 		}
 		
-		if(Input.GetKeyDown(KeyCode.LeftArrow)){
+		if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)){
 			MoveTo(currentPosition, PlayerDirection.left);
-		} else if(Input.GetKeyDown(KeyCode.RightArrow)){
+		} else if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)){
 			MoveTo(currentPosition, PlayerDirection.right);
 		}
 		
