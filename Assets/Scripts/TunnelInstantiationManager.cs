@@ -61,7 +61,6 @@ public class TunnelInstantiationManager : MonoBehaviour {
 		return gameCamera;
 	}	
 	
-	
 	private void RepositionObjectToY(GameObject go, float y){
 		go.transform.position = new Vector3(go.transform.position.x, y, go.transform.position.x);
 	}

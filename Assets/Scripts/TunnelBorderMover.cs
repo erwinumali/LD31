@@ -7,12 +7,9 @@ public class TunnelBorderMover : MonoBehaviour {
 	private TunnelInstantiationManager tim;
 	private float unitsPerSecond;
 	private GameObject gameCamera;
-	
-	private Vector3 originalPosition;
+
 	// Use this for initialization
 	void Start () {
-		originalPosition = transform.position;
-	
 		tim = GameObject.Find(timName).GetComponent<TunnelInstantiationManager>();
 		
 		if(tim == null){
