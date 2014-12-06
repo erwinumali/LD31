@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	public enum PlayerDirection {up, down, left, right, center};
-	
+
 	public float snapSpeed = 20.0f; //units per second
 
 	private PlayerDirection currentPosition;
@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
 		if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)){
 			MoveTo(currentPosition, PlayerDirection.up);
 		} else if(Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)){
