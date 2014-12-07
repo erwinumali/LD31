@@ -66,11 +66,11 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   serializedVersion: 2
-  m_Mass: .00100000005
+  m_Mass: 9.99999975e-05
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   damage: 1
   direction: {x: 0, y: 0, z: 0}
   rotationSpeed: {x: 0, y: 0, z: 0, w: 1}
-  speed: 8
+  speed: 20
   maxDuration: 1
   timeAlive: 0
 --- !u!1001 &100100000

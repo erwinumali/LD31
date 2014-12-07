@@ -22,10 +22,10 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 	
-	void OnCollisionEnter(Collision col){
-		Debug.Log("collide!");
-		if(col.collider.tag == "bulletbasic"){
+	void OnTriggerEnter(Collider col){
+		if(col.tag == "bulletbasic"){
 			this.hp -= 1.0f;
+			Debug.Log("collide! " + hp);
 			col.transform.position = resetPosition;
 		}
 	}

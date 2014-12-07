@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof(Rigidbody))]
+//[RequireComponent (typeof(Rigidbody))]
 [RequireComponent (typeof(BoxCollider))]
 
 public class Bullet : MonoBehaviour {
@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour {
 		isFiring = false;
 		damage = 1.0f;
 		timeAlive = 0.0f;
-		rigidbody.velocity = Vector3.zero;
+		//rigidbody.velocity = Vector3.zero;
 		collider.isTrigger = true;
 		//transform.rotation = Random.rotation;
 	}
@@ -33,8 +33,8 @@ public class Bullet : MonoBehaviour {
 			collider.isTrigger = false;
 			//Debug.Log(direction + ", " + Input.mousePosition);
 			timeAlive += Time.deltaTime;
-			//transform.position = transform.position + ((direction * speed) * Time.deltaTime);
-			this.rigidbody.AddForce(direction);
+			transform.position = transform.position + ((direction * speed) * Time.deltaTime);
+			//this.rigidbody.AddForce(direction);
 			//transform.rotation = Quaternion.Dot(transform.rotation, rotationSpeed);
 			if(timeAlive > maxDuration){
 				Reset ();
@@ -46,7 +46,7 @@ public class Bullet : MonoBehaviour {
 		isFiring = false;
 		timeAlive = 0.0f;
 		transform.position = new Vector3(0, 20.0f, 0);
-		rigidbody.velocity = Vector3.zero;
+		//rigidbody.velocity = Vector3.zero;
 		collider.isTrigger = true;
 		//transform.rotation = Random.rotation;
 	}
