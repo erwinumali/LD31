@@ -2,3 +2,11 @@ Sound
 -------
 machine gun sfx
 -- http://freesound.org/people/ShawnyBoy/sounds/165394/
+fluorescent light hum
+-- http://freesound.org/people/kbnevel/sounds/119838/
+
+
+Amb
+-------
+cavernous drone
+-- http://freesound.org/people/glueIsobar/sounds/195137/

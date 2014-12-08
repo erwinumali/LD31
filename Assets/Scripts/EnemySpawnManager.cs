@@ -3,11 +3,12 @@ using System.Collections;
 
 public class EnemySpawnManager : MonoBehaviour {
 
-	public float enemySpawnRate = 0.2f;
+	public float enemySpawnRate = 0.3f;
 	public int initialMaxSpawn = 10;
-	public float difficultyIncreaseInterval = 60.0f;
+	public float difficultyIncreaseInterval = 30.0f;
 	public float enemySpawnIncreaseRate = 0.3f;
 	public float maxSpawnIncreaseRate = 0.3f;
+	public float spawnTickIncreaseRate = 0.2f;
 
 	public GameObject enemy;
 
@@ -58,7 +59,7 @@ public class EnemySpawnManager : MonoBehaviour {
 				
 				Debug.Log("spawn tick success! Used mob on slot " + (enemyCounter % enemyComponentArray.Length));
 				
-				enemyArray[enemyCounter % enemyComponentArray.Length].transform.position = new Vector3(Random.Range(-5.0f, 5.0f), 0, Random.Range(-5.0f, 5.0f));
+				enemyArray[enemyCounter % enemyComponentArray.Length].transform.position = new Vector3(Random.Range(-8.0f, 8.0f), 0, Random.Range(-8.0f, 8.0f));
 				enemyComponentArray[enemyCounter % enemyComponentArray.Length].Spawn();
 				enemySpawnedCounter += 1;
 			}
@@ -68,6 +69,7 @@ public class EnemySpawnManager : MonoBehaviour {
 			Debug.Log("Difficulty increase!");
 			enemySpawnRate *= (1 + enemySpawnIncreaseRate);
 			initialMaxSpawn = (int) ((float)initialMaxSpawn * (1 + maxSpawnIncreaseRate));
+			spawnTick = spawnTick * (1 + spawnTickIncreaseRate);
 			difficultyTimer = 0;
 		}
 	}
