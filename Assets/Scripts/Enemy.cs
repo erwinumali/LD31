@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		if(col.tag == "bulletbasic"){
 			this.hp -= 1.0f;
-			Debug.Log("collide! " + hp);
+			//Debug.Log("collide! " + hp);
 			col.transform.position = resetPosition;
 			
 		}

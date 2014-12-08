@@ -6,8 +6,8 @@ public class EnemySpawnManager : MonoBehaviour {
 	public float enemySpawnRate = 0.2f;
 	public int initialMaxSpawn = 10;
 	public float difficultyIncreaseInterval = 60.0f;
-	public float enemySpawnIncrease = 0.1f;
-	public int maxSpawnIncrease = 2;
+	public float enemySpawnIncreaseRate = 0.3f;
+	public float maxSpawnIncreaseRate = 0.3f;
 
 	public GameObject enemy;
 
@@ -35,8 +35,8 @@ public class EnemySpawnManager : MonoBehaviour {
 		enemyCounter = 0;
 		enemySpawnedCounter = 0;
 		
-		enemyArray = new GameObject[initialMaxSpawn + (maxSpawnIncrease * 2)];
-		enemyComponentArray = new Enemy[initialMaxSpawn + (maxSpawnIncrease * 2)];
+		enemyArray = new GameObject[(int)(initialMaxSpawn * 3)];
+		enemyComponentArray = new Enemy[enemyArray.Length];
 		
 		for(int i = 0; i < enemyArray.Length; i++){
 			enemyArray[i] = (GameObject)GameObject.Instantiate(enemy, enemyPoolPosition, Quaternion.identity);
@@ -58,16 +58,16 @@ public class EnemySpawnManager : MonoBehaviour {
 				
 				Debug.Log("spawn tick success! Used mob on slot " + (enemyCounter % enemyComponentArray.Length));
 				
-				enemyArray[enemyCounter].transform.position = new Vector3(Random.Range(-5.0f, 5.0f), 0, Random.Range(-5.0f, 5.0f));
-				enemyComponentArray[enemyCounter].Spawn();
+				enemyArray[enemyCounter % enemyComponentArray.Length].transform.position = new Vector3(Random.Range(-5.0f, 5.0f), 0, Random.Range(-5.0f, 5.0f));
+				enemyComponentArray[enemyCounter % enemyComponentArray.Length].Spawn();
 				enemySpawnedCounter += 1;
 			}
 		}
 		
 		if(difficultyTimer >= difficultyIncreaseInterval){
 			Debug.Log("Difficulty increase!");
-			enemySpawnRate += enemySpawnIncrease;
-			initialMaxSpawn += maxSpawnIncrease;
+			enemySpawnRate *= (1 + enemySpawnIncreaseRate);
+			initialMaxSpawn = (int) ((float)initialMaxSpawn * (1 + maxSpawnIncreaseRate));
 			difficultyTimer = 0;
 		}
 	}
