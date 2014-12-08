@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour {
 		timeAlive = 0.0f;
 		//rigidbody.velocity = Vector3.zero;
 		collider.isTrigger = true;
-		//transform.rotation = Random.rotation;
+		transform.rotation = Random.rotation;
 	}
 	
 	// Update is called once per frame
@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour {
 		transform.position = new Vector3(0, 20.0f, 0);
 		//rigidbody.velocity = Vector3.zero;
 		collider.isTrigger = true;
-		//transform.rotation = Random.rotation;
+		transform.rotation = Random.rotation;
 	}
 	
 }

@@ -6,7 +6,7 @@ public class TunnelInstantiationManager : MonoBehaviour {
 
 	public readonly int TUNNEL_RENDER_NEAREST_Y = 1;
 	public readonly int TUNNEL_RENDER_FARTHEST_Y = -100;
-
+	
 	public GameObject tunnelSegment = null;
 	public int segmentAmount = 6;
 	public float unitsPerSecond = 50.0f;

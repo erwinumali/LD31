@@ -81,5 +81,7 @@ public class PlayerTurretManager : MonoBehaviour {
 		currentBullet.transform.position = this.transform.position;
 		currentBulletComponent.direction = Vector3.Normalize(new Vector3(dir.x, 0.0f, dir.y));
 		currentBulletComponent.isFiring = true;
+		
+		this.audio.Play();
 	}
 }
