@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe17f7a9a92f47a4abcac04510afe568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawnRate: 1
+  enemySpawnRate: .400000006
   initialMaxSpawn: 10
   difficultyIncreaseInterval: 30
   enemySpawnIncreaseRate: .300000012
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 100000, guid: a98f92d901187a14b9567d64741aee4a, type: 2}
-  bullet1Cooldown: .00999999978
+  bullet1Cooldown: .0900000036
 --- !u!82 &334605866
 AudioSource:
   m_ObjectHideFlags: 0
@@ -410,7 +410,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: c4be32e861ef10f44a59427b0f096d18, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .800000012
+  m_Volume: .670000017
   m_Pitch: 3
   Loop: 0
   Mute: 0
@@ -829,6 +829,18 @@ Prefab:
       propertyPath: centerPos
       value: 
       objectReference: {fileID: 980367834}
+    - target: {fileID: 11400002, guid: 194d54040cf9a754895d5e35c8555035, type: 2}
+      propertyPath: bullet1Cooldown
+      value: .0900000036
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 194d54040cf9a754895d5e35c8555035, type: 2}
+      propertyPath: m_Pitch
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 194d54040cf9a754895d5e35c8555035, type: 2}
+      propertyPath: m_Volume
+      value: .670000017
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 194d54040cf9a754895d5e35c8555035, type: 2}
   m_RootGameObject: {fileID: 1548390843}

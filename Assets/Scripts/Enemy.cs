@@ -107,7 +107,7 @@ public class Enemy : MonoBehaviour {
 		this.rigidbody.useGravity = true;
 		this.rigidbody.AddTorque(Random.insideUnitSphere * 10.0f);
 		//this.rigidbody.AddExplosionForce(Random.Range(10.0f, 50.0f), transform.position, 30.0f);
-		this.rigidbody.AddForce(new Vector3(Random.Range(-80.0f, 80.0f), Random.Range(-80.0f, 80.0f), Random.Range(-80.0f, 80.0f)));
+		//this.rigidbody.AddForce(new Vector3(Random.Range(-80.0f, 80.0f), Random.Range(-80.0f, 80.0f), Random.Range(-80.0f, 80.0f)));
 		
 	}
 }
